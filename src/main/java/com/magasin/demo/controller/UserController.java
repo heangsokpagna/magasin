@@ -61,4 +61,10 @@ public class UserController {
 
 		return "redirect:/";
 	}
+	
+	@GetMapping("/user/users")
+	public String users(ModelMap model) {
+		System.out.println(userRepository.findAll());
+		return "/index";	}
+	
 }
