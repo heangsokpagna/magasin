@@ -1,0 +1,74 @@
+
+<th:block th:fragment="head" xmlns:th="http://www.thymeleaf.org">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+		crossorigin="anonymous">
+
+	<link rel="stylesheet" href="/css/styles.css"
+		th:href="@{/css/styles.css}">
+
+	<title>Magasin</title>
+</th:block>
+
+<th:block th:fragment="header">
+	<header class="container p-3 mb-3">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col-md-6">
+						<a class="logo" th:href="@{/}"> <img width="80"
+							th:src="@{images/logo/logo-sanp.png}" alt="logo" />
+						</a>
+					</div>
+					<div class="col-md-6">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="recherche">
+							<div>
+								<button class="btn btn-outline-success" type="submit">Recherche</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="row justify-content-end">
+					<div class="col-md-4 ">
+						<th:block th:if="${session.user}">
+							<a th:href="@{/article/new}" class="btn btn-success">Ajouter Produits</a>
+							<a th:href="@{/article/articles}" class="btn btn-success">Produits</a>
+							<a th:href="@{/user/logout}" class="btn btn-danger">Log out</a>
+						</th:block>
+					</div>
+					<div class="col-md-4">
+						<th:block th:unless="${session.user}">
+							<a th:href="@{/user/login}" class="login">S'identifier</a>
+							<a th:href="@{/signup}" class="log on">S'inscrire</a>
+						</th:block>
+					</div>
+					<div class="col-md-4">
+						<div class="add-to-basket">Add to Basket</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
+	<!--MESSAGE FLASH-->
+	<div id="message" class="alert alert-success text-center message"
+		th:if="${success}" th:text="${success}"></div>
+</th:block>
+
+
+<th:block th:fragment="footer">
+	<footer class="bg-secondary p-3 mt-3 text-center"> &copy;
+		magasion en ligne </footer>
+
+	<script type="text/javascript" th:src="@{/js/script.js}"></script>
+</th:block>

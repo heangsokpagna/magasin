@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<th:block th:replace="~{_commun :: head}"></th:block>
+</head>
+<body>
+	<th:block th:replace="~{_commun :: header}"></th:block>
+	
+	<main class="container-fluid">
+		<h2 class="text-center">Connexion</h2>
+		
+		<form method="post" th:action="@{/login}" >
+		
+			
+			<div class="form-group">
+			    <label>Connexion</label>
+			    <input type="text" value="ilci" class="form-control" name="login" placeholder="Entrer login">
+			</div>
+			  <div class="form-group">
+			    <label>Mot de passe</label>
+			    <input type="password" value="ilci" name="mdp" class="form-control" placeholder="Password">
+			  </div>
+			  
+			  <button type="submit" class="btn btn-primary mt-3">Submit</button>
+		</form>
+	
+	</main>
+	
+	
+	<th:block th:replace="~{_commun :: footer}"></th:block>
+</body>
+</html>
