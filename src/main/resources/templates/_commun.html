@@ -17,9 +17,9 @@
 </th:block>
 
 <th:block th:fragment="header">
-	<header class="container p-3 mb-3">
+	<header class="container-fluid p-4 mb-3">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-5">
 				<div class="row">
 					<div class="col-md-6">
 						<a class="logo" th:href="@{/}"> <img width="80"
@@ -52,11 +52,14 @@
 							<a th:href="@{/signup}" class="log on">S'inscrire</a>
 						</th:block>
 					</div>
-					<div class="col-md-2">
-						<div class="add-to-basket">Panier</div>
-					</div>
 				</div>
 			</div>
+			<div class="col-md-1 text-end">
+				<div class="add-to-basket">
+					<i class="fa fa-cart-shopping border border-3 rounded-circle p-3"></i>
+				</div>
+			</div>
+			
 		</div>
 
 	</header>
